@@ -1,6 +1,6 @@
-import axios from "../hooks/axios";
+import axios from "../utils/axios";
 import React, { useEffect, useState } from "react";
-import requests from "../hooks/Requests";
+import requests from "../utils/Requests";
 
 const Banner = () => {
 	const [movie, setMovie] = useState([]);
@@ -17,8 +17,6 @@ const Banner = () => {
 		}
 		fetchData();
 	}, []);
-
-	console.log(movie);
 
 	const truncate = (string, n) => {
 		return string?.length > n ? string.substr(0, n - 1) + "..." : string;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import netflixLogo from "../assets/img/netflix-logo.png";
 
 const NavBar = () => {
 	const [show, handleShow] = useState(false);
@@ -19,11 +20,7 @@ const NavBar = () => {
 	return (
 		<div className={`nav ${show && "nav-black"}`}>
 			<div className="NavBar-Wrapper">
-				<img
-					className="Nav-Logo"
-					src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-					alt="logo not found"
-				/>
+				<img className="Nav-Logo" src={netflixLogo} alt="logo not found" />
 				<img
 					className="Nav-Avatar"
 					src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
