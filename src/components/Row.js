@@ -20,14 +20,22 @@ const Row = (props) => {
 	return (
 		<div className="Row-Wrapper">
 			<h2>{title}</h2>
-			{movies.map((movie) => {
-				<img
-					src={`${base_url}${
-						isLargeRow ? movie.poster_path : movie.backdrop_path
-					}`}
-					alt={movie.name}
-				/>;
-			})}
+			<div className="Row-Posters">
+				{movies.map(
+					(movie) =>
+						((isLargeRow && movie.poster_path) ||
+							(!isLargeRow && movie.backdrop_path)) && (
+							<img
+								className={`Row-Poster ${isLargeRow ? "Row-Poster-Large" : ""}`}
+								key={movie.id}
+								src={`${base_url}${
+									isLargeRow ? movie.poster_path : movie.backdrop_path
+								}`}
+								alt={movie.name}
+							/>
+						)
+				)}
+			</div>
 		</div>
 	);
 };
