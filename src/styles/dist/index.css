@@ -1,0 +1,128 @@
+.Login-Screen {
+  position: relative;
+  height: 100%;
+  background: url("https://www.logitheque.com/en/wp-content/uploads/sites/6/2019/07/netflix-image.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.Login-Screen-Logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding-left: 20px;
+}
+
+.Login-Screen-BTN {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+}
+
+.Login-Screen-Gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.Login-Screen-Body {
+  position: absolute;
+  top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+  left: 0;
+  right: 0;
+}
+.Login-Screen-Body h1 {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+}
+.Login-Screen-Body h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.Login-Screen-Body h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.Login-Screen-Input {
+  margin: 20px;
+}
+.Login-Screen-Input form input {
+  padding: 10px;
+  outline-width: 0;
+  height: 34px;
+  width: 30%;
+  border: none;
+  max-width: 600px;
+}
+.Login-Screen-Input .Login-Screen-GetStarted {
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Sign-Up-Screen {
+  max-width: 300px;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.85);
+}
+.Sign-Up-Screen form {
+  display: grid;
+  flex-direction: column;
+}
+.Sign-Up-Screen form h1 {
+  text-align: left;
+  margin-bottom: 25px;
+}
+.Sign-Up-Screen form input {
+  outline-width: 0;
+  height: 40px;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 15px;
+}
+.Sign-Up-Screen form button {
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #e50914;
+}
+.Sign-Up-Screen form h4 {
+  text-align: left;
+  margin-top: 30px;
+}
+.Sign-Up-Screen form h4 .Sign-Up-Screen-Grey {
+  color: gray;
+}
+.Sign-Up-Screen form h4 .Sign-Up-Screen-Link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}/*# sourceMappingURL=index.css.map */
