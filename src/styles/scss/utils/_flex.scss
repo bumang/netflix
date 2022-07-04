@@ -1,4 +1,4 @@
-@mixin flexCenter($direction, $content, $background: white) {
+@mixin flexCenter($direction, $content: flex-start, $background: white) {
 	display: flex;
 	flex-direction: $direction;
 	justify-content: $content;

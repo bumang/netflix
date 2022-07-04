@@ -125,4 +125,61 @@
 .Sign-Up-Screen form h4 .Sign-Up-Screen-Link:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.Profile-Screen {
+  height: 100vh;
+  color: white;
+}
+.Profile-Screen .Profile-Screen-Body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--background-color);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8%;
+  max-width: 600px;
+}
+.Profile-Screen .Profile-Screen-Body h1 {
+  font-size: 60px;
+  font-weight: 400;
+  border-bottom: 1px solid #282c2d;
+  margin-bottom: 20px;
+}
+.Profile-Screen .Profile-Screen-Info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: var(--background-color);
+}
+.Profile-Screen .Profile-Screen-Info img {
+  height: 100px;
+}
+.Profile-Screen .Profile-Screen-Info .Profile-Screen-Details {
+  color: white;
+  margin-left: 25px;
+  flex: 1;
+}
+.Profile-Screen .Profile-Screen-Info .Profile-Screen-Details h2 {
+  background-color: gray;
+  padding: 15px;
+  font-size: 15px;
+  padding-left: 20px;
+}
+.Profile-Screen .Profile-Screen-Info .Profile-Screen-Details .Profile-Screen-Plans h3 {
+  border-bottom: 1px solid #282c2d;
+  padding-bottom: 10px;
+}
+.Profile-Screen .Profile-Screen-Info .Profile-Screen-Details .Profile-Screen-Plans .Profile-Screen-SignOut {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 5%;
+  width: 100%;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
 }/*# sourceMappingURL=index.css.map */
