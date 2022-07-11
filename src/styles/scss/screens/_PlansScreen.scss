@@ -1,0 +1,26 @@
+@use "../utils/" as u;
+
+.Plan-Screen {
+	.Plan-Screen-Plans {
+		@include u.flexCenter(row, space-between, var(--background-color));
+		padding: 20px;
+		opacity: 0.8;
+		&:hover {
+			opacity: 1;
+		}
+		button {
+			padding: 10px 20px;
+			color: var(--secondary-color);
+			background-color: var(--primary-color);
+			cursor: pointer;
+			font-weight: 600;
+			border: none;
+		}
+	}
+}
+
+.Plan-Screen-Disabled {
+	button {
+		background-color: gray !important;
+	}
+}
