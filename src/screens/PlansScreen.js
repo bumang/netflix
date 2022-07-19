@@ -1,32 +1,37 @@
 import React, { useEffect, useState } from "react";
 import db from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	checkSubscription,
+	selectUser,
+	setSubscription,
+} from "../features/userSlice";
 import { addDoc, onSnapshot } from "firebase/firestore";
 import { loadStripe } from "@stripe/stripe-js";
 
 const PlansScreen = () => {
 	const [products, setProducts] = useState([]);
-	const [subscription, setSubscription] = useState(null);
 	const user = useSelector(selectUser);
-
+	const subscriptionData = useSelector(checkSubscription);
+	const dispatch = useDispatch();
 	useEffect(() => {
 		const q = query(collection(db, `customers/${user.uid}/subscriptions`));
 
 		const getSubscriptionInfo = async () => {
 			const querySnapshot = await getDocs(q);
-			querySnapshot.forEach(async (subscription) => {
-				setSubscription({
-					role: subscription.data().role,
-					current_period_end: subscription.data().current_period_end.seconds,
-					current_period_start:
-						subscription.data().current_period_start.seconds,
-				});
+			querySnapshot.forEach(async (subscribe) => {
+				dispatch(
+					setSubscription({
+						role: subscribe.data().role,
+						current_period_end: subscribe.data().current_period_end.seconds,
+						current_period_start: subscribe.data().current_period_start.seconds,
+					})
+				);
 			});
 		};
 		getSubscriptionInfo();
-	}, [user.uid]);
+	}, [user.uid, dispatch]);
 
 	useEffect(() => {
 		// getting the products as product id
@@ -83,11 +88,11 @@ const PlansScreen = () => {
 	return (
 		<div className="Plan-Screen">
 			<br />
-			{subscription && (
+			{subscriptionData && (
 				<p>
 					Renewal Date :
 					{new Date(
-						subscription?.current_period_end * 1000
+						subscriptionData?.current_period_end * 1000
 					).toLocaleDateString()}
 				</p>
 			)}
@@ -96,7 +101,7 @@ const PlansScreen = () => {
 				// TODOs add some logic if user subscription is active...
 				const isCurrentPackage = productData.name
 					?.toLowerCase()
-					.includes(subscription?.role.toLowerCase());
+					.includes(subscriptionData?.role.toLowerCase());
 
 				return (
 					<div

@@ -197,16 +197,20 @@ a:active {
 
 .Banner {
   height: 448px;
-  -o-object-fit: contain;
-     object-fit: contain;
   position: relative;
   color: white;
+  width: 100%;
 }
 
 .Banner-Contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: none;
   margin-left: 30px;
-  padding-top: 140px;
   height: 190px;
+  position: absolute;
+  top: 140px;
 }
 
 .Banner-Title {
@@ -225,6 +229,10 @@ a:active {
 
 .Banner--FadeBottom {
   height: 7.4rem;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100%;
   background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
 
@@ -280,7 +288,7 @@ a:active {
 
 .Login-Screen {
   position: relative;
-  height: 100%;
+  height: 100vh;
   background: url("https://www.logitheque.com/en/wp-content/uploads/sites/6/2019/07/netflix-image.jpg") center no-repeat;
   background-size: cover;
 }
@@ -309,7 +317,7 @@ a:active {
 .Login-Screen-Gradient {
   width: 100%;
   z-index: 1;
-  height: 100vh;
+  min-height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
 }
@@ -362,7 +370,7 @@ a:active {
 }
 
 .Sign-Up-Screen {
-  max-width: 300px;
+  max-width: 400px;
   padding: 70px;
   margin-left: auto;
   margin-right: auto;
